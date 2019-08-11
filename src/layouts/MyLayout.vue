@@ -45,8 +45,7 @@
           </q-btn>
           <q-btn round flat>
             <q-avatar size="26px">
-              <img src="assets/author.jpg">
-              <!-- <img src="https://cdn.quasar.dev/img/boy-avatar.png"> -->
+              <img src="statics/favicon128.ico">
             </q-avatar>
             <q-tooltip>Account</q-tooltip>
           </q-btn>
@@ -61,20 +60,28 @@
       content-class="bg-grey-2"
       :width="240"
     >
+      <q-item-label header class="text-weight-bold text-uppercase">
+        首页相关
+      </q-item-label>
+
       <q-scroll-area class="fit">
         <q-list padding>
-          <q-item v-for="link in links1" :key="link.text" v-ripple clickable>
+          <q-item v-for="link in links1" :key="link.text" v-ripple clickable tag="a" target="_blank" :href="link.url">
             <q-item-section avatar>
               <q-icon color="grey" :name="link.icon" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
+                <q-item-label>{{ link.text }}</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-separator class="q-my-md" />
 
-          <q-item v-for="link in links2" :key="link.text" v-ripple clickable>
+          <q-item-label header class="text-weight-bold text-uppercase">
+            webGL教学
+          </q-item-label>
+
+          <q-item v-for="link in links2" :key="link.text" v-ripple clickable tag="a" target="_blank" :href="link.url">
             <q-item-section avatar>
               <q-icon color="grey" :name="link.icon" />
             </q-item-section>
@@ -86,10 +93,10 @@
           <q-separator class="q-mt-md q-mb-xs" />
 
           <q-item-label header class="text-weight-bold text-uppercase">
-            More from Youtube
+            webGl工具集
           </q-item-label>
 
-          <q-item v-for="link in links3" :key="link.text" v-ripple clickable>
+          <q-item v-for="link in links3" :key="link.text" v-ripple clickable tag="a" target="_blank" :href="link.url">
             <q-item-section avatar>
               <q-icon color="grey" :name="link.icon" />
             </q-item-section>
@@ -99,8 +106,11 @@
           </q-item>
 
           <q-separator class="q-my-md" />
+          <q-item-label header class="text-weight-bold text-uppercase">
+            webGL星路
+          </q-item-label>
 
-          <q-item v-for="link in links4" :key="link.text" v-ripple clickable>
+          <q-item v-for="link in links4" :key="link.text" v-ripple clickable tag="a" target="_blank" :href="link.url">
             <q-item-section avatar>
               <q-icon color="grey" :name="link.icon" />
             </q-item-section>
@@ -108,9 +118,19 @@
               <q-item-label>{{ link.text }}</q-item-label>
             </q-item-section>
           </q-item>
+<!-- <q-item-label header class="text-weight-bold text-uppercase">
+            join US
+          </q-item-label>
 
+          <q-item v-for="link in links4" :key="link.text" v-ripple clickable tag="a" target="_blank" :href="link.url">
+            <q-item-section avatar>
+              <q-icon color="grey" :name="link.icon" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>{{ link.text }}</q-item-label>
+            </q-item-section>
+          </q-item> -->
           <q-separator class="q-mt-md q-mb-lg" />
-
           <div class="q-px-md text-grey-9">
             <div class="row items-center q-gutter-x-sm q-gutter-y-xs">
               <a
@@ -153,42 +173,38 @@ export default {
       leftDrawerOpen: false,
       search: '',
       links1: [
-        { icon: 'home', text: 'Home' },
-        { icon: 'whatshot', text: 'Trending' },
-        { icon: 'subscriptions', text: 'Subscriptions' }
+        { icon: 'home', text: '首页', url: '/' },
+        { icon: 'local_movies', text: '视频秀', url: 'https:www.baidu.com' },
+        // { icon: 'whatshot', text: 'Trending', url: 'https:www.baidu.com' },
+        { icon: 'apps', text: '介绍', url: 'https:www.baidu.com' }
       ],
       links2: [
-        { icon: 'folder', text: 'Library' },
-        { icon: 'restore', text: 'History' },
-        { icon: 'watch_later', text: 'Watch later' },
-        { icon: 'thumb_up_alt', text: 'Liked videos' }
+        { icon: 'folder', text: '课程介绍', url: 'https:www.baidu.com' },
+        { icon: 'live_tv', text: '课程视频', url: 'https:www.baidu.com' },
+        { icon: 'fas fa-code', text: '实战报名', url: 'https:www.baidu.com' },
+        { icon: 'thumb_up_alt', text: '一对一辅导', url: 'https:www.baidu.com' }
       ],
       links3: [
-        { icon: 'fab fa-youtube', text: 'YouTube Premium' },
-        { icon: 'local_movies', text: 'Movies & Shows' },
-        { icon: 'videogame_asset', text: 'Gaming' },
-        { icon: 'live_tv', text: 'Live' }
+        { icon: 'settings', text: '工具汇总', url: 'https:www.baidu.com' },
+        { icon: 'flag', text: '安装教程', url: 'https:www.baidu.com' },
+        { icon: 'help', text: '请求协助', url: 'https:www.baidu.com' },
+        { icon: 'feedback', text: '分享社区', url: 'https:www.baidu.com' }
       ],
       links4: [
-        { icon: 'settings', text: 'Settings' },
-        { icon: 'flag', text: 'Report history' },
-        { icon: 'help', text: 'Help' },
-        { icon: 'feedback', text: 'Send feedback' }
+        { icon: 'fab fa-youtube', text: '时间长河', url: 'https:www.baidu.com' },
+        { icon: 'local_movies', text: '磕磕碰碰', url: 'https:www.baidu.com' },
+        { icon: 'videogame_asset', text: '槽点满满', url: 'https:www.baidu.com' },
+        { icon: 'live_tv', text: '未完待续', url: 'https:www.baidu.com' }
       ],
       buttons1: [
-        { text: 'About' },
-        { text: 'Press' },
-        { text: 'Copyright' },
-        { text: 'Contact us' },
-        { text: 'Creators' },
-        { text: 'Advertise' },
-        { text: 'Developers' }
+        { text: 'Author:' },
+        { text: 'Aemon' },
+        { text: 'Scqilin' },
+        { text: 'Ethan' }
       ],
       buttons2: [
-        { text: 'Terms' },
-        { text: 'Privacy' },
-        { text: 'Policy & Safety' },
-        { text: 'Test new features' }
+        { text: 'email:' },
+        { text: 'space_station99@126.com' }
       ]
     }
   }

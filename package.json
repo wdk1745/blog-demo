@@ -1,14 +1,16 @@
 {
   "name": "blog",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "web3D No.99空间站",
+  "productName": "web3D No.99空间站",
   "cordovaId": "org.cordova.quasar.app",
   "author": "infiniteDemon <l>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
